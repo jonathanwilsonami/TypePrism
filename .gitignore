@@ -1,3 +1,6 @@
+# IDE
+.vscode/
+
 # Data Files
 data
 
@@ -32,6 +35,7 @@ var/
 
 # PyInstaller
 *.manifest
+manifest
 *.spec
 
 # Installer logs
