@@ -1,6 +1,9 @@
-"""Can be used to run modules and generate data."""
+import sys
+sys.path.append(".")
 
-import redditbot as rb
+from rmtibot.redditbot import test_unit
+
+print(sys.path)
 
 # data = rb.process_data("ENFJ")
 # # data = rb.process_data("ENFJ")

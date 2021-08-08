@@ -1,22 +1,19 @@
-"""An AI application that reads your Myers-Briggs Type Indicator.
-
-This script...
-"""
-
 import praw
 import pandas as pd
 from itertools import cycle
-import time
-import sys
 
-class RedditBot:
+class Redditbot:
     pass
 
 MBTI_TYPES = ["ISTJ", "ISTP", "ISFJ", "ISFP", "INFJ", "INFP", "INTJ", "INTP", 
             "ESTP", "ESTJ", "ESFP", "ESFJ", "ENFP", "ENFJ", "ENTP", "ENTJ"]
 COLS = ["redditor", "type", "text"]
 
-reddit = praw.Reddit('bot1', config_interpolation="basic")
+def creat_reddit_instance():
+    reddit = praw.Reddit('redditbot', config_interpolation="basic")
+    return reddit
+
+reddit = creat_reddit_instance()
 
 def process_data(subreddit_group, file_name=None):
     users = get_redditors_from_subreddit(subreddit_group)
@@ -92,38 +89,9 @@ def get_user_type(user):
     
     return type
 
+
+def test_unit(x):
+    return x + 1
+
 if (__name__ == '__main__'):
-    time = time.time()
-
-    print("""
-    #########################################################################################
-    #########################################################################################
-    Usage: This script acts to pull everything together and generate 
-    a data file.
-    Expalain....
-    Parameters:
-        subreddit_group (string): name of subreddit group to search.
-        file_name (string): name of of the file you want to save your data under.
-        
-    Examples:
-        python3 RedditBot.py 'ENFJ' 'test_file'
-        python3 RedditBot.py d 'test_file'
-        python3 RedditBot.py
-    #########################################################################################
-    #########################################################################################
-
-        """)
-
-    # Defaults:
-    subreddit_group = "ENFJ"
-    file_name = "personality_data_{}".format(time)
-
-    # Command line inputs
-    if len(sys.argv) > 1:
-        if sys.argv[1] != 'd':
-            subreddit_group = sys.argv[1]
-        if sys.argv[2] != 'd':
-            file_name = sys.argv[2]
-
-    print("Generating data...")
-    process_data(subreddit_group, file_name)
+    pass

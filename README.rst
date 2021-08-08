@@ -1,5 +1,5 @@
 ***************************************************************************
-rmti - An AI application that determines your Myers-Briggs Type Indicator.
+TypePrism - An AI application that determines your Myers-Briggs Type Indicator.
 ***************************************************************************
 
 Description
